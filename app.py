@@ -11,9 +11,14 @@ def subtract(a, b):
    return a - b
 
 
+def multiply(a, b):
+   """Multiplies two numbers A and B."""
+   return a * b
+
+
 if __name__ == '__main__':
    if len(sys.argv) < 4:
-       print("Usage: python app.py [add|subtract] num1 num2")
+       print("Usage: python3 app.py [add|subtract|multiply] num1 num2")
        sys.exit(1)
 
 
@@ -28,8 +33,11 @@ if __name__ == '__main__':
    elif operation == 'subtract':
        result = subtract(a, b)
        print(f'{a} - {b} = {result}')
+   elif operation == 'multiply':
+        result = multiply(a, b)
+        print(f'{a} * {b} = {result}')   
    else:
-       print("Unknown operation. Use 'add' or 'subtract'.")
+       print("Unknown operation. Use 'add' or 'subtract', or 'multiply'.")
 
 
 
