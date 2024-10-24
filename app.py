@@ -15,10 +15,16 @@ def multiply(a, b):
    """Multiplies two numbers A and B."""
    return a * b
 
+def divide(a, b):
+   """Divides number A by B. Handles division by zero."""
+   if b == 0:
+    return "Error: Division by zero is undefined."
+   return a / b
+
 
 if __name__ == '__main__':
    if len(sys.argv) < 4:
-       print("Usage: python3 app.py [add|subtract|multiply] num1 num2")
+       print("Usage: python3 app.py [add|subtract|multiply|divide] num1 num2")
        sys.exit(1)
 
 
@@ -36,8 +42,11 @@ if __name__ == '__main__':
    elif operation == 'multiply':
         result = multiply(a, b)
         print(f'{a} * {b} = {result}')   
+   elif operation == 'divide':
+       result = divide(a, b)
+       print(f'{a} / {b} = {result}')    
    else:
-       print("Unknown operation. Use 'add' or 'subtract', or 'multiply'.")
+       print("Unknown operation. Use 'add' or 'subtract' or 'divide' or 'multiply'.")
 
 
 
